@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>STUDENT INFORMATION</title>
+  </head>
+  <body>
+    <h1>STUDENT INFORMATION</h1>
+    {% if student_list %}
+      {% for student in student_list %}
+      <h2>NAME : {{name}}</h2>
+      <ul>
+        <li>Rollno : {{student.rollno}}</li>
+        <li>DOB : {{student.dob}}</li>
+        <li>MARKS : {{student.marks}}</li>
+        <li>EMAIL : {{student.email}}</li>
+        <li>PHONENUMBER : {{student.phonenumber}}</li>
+        <li>ADDRESS : {{student.address}}</li>
+      </ul>
+      {% endfor %}
+    {% else %}
+      <h2>Records not found ......</h2>
+    {% endif %}
+  </body>
+</html>
